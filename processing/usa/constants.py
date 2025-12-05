@@ -34,3 +34,11 @@ PROCESSED_DIR = "processed"
 HD2024_FILENAME = "HD2024.csv"
 IC2024_FILENAME = "IC2024.csv"
 COLLEGE_METADATA_OUTPUT = "college_metadata.csv"
+
+REQUIRED_FIELDS_COLLEGE_METADATA = [
+    "website",
+    "admissions_website",
+    "financial_aid_website",
+    "application_website",
+    "setting_type",
+]

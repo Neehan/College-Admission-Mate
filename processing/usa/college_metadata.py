@@ -9,6 +9,7 @@ from processing.usa.constants import (
     LEVEL_GRADUATE,
     IPEDS_COLUMNS_IC,
     IPEDS_MERGE_KEY,
+    REQUIRED_FIELDS_COLLEGE_METADATA,
 )
 
 
@@ -91,6 +92,9 @@ class CollegeMetadataProcessor:
 
         self.result_df = result
 
+    def filter_complete_records(self):
+        self.result_df = self.result_df.dropna(subset=REQUIRED_FIELDS_COLLEGE_METADATA)
+
     def save(self):
         self.output_path.parent.mkdir(parents=True, exist_ok=True)
         self.result_df.to_csv(self.output_path, index=False)
@@ -99,6 +103,7 @@ class CollegeMetadataProcessor:
         self.load_data()
         self.merge_datasets()
         self.transform()
+        self.filter_complete_records()
         self.save()
         return self.result_df
 
