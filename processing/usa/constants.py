@@ -42,3 +42,22 @@ REQUIRED_FIELDS_COLLEGE_METADATA = [
     "application_website",
     "setting_type",
 ]
+
+C2024_A_CSV_FILENAME = "C2024_A.csv"
+C2024_A_XLSX_FILENAME = "C2024_A.xlsx"
+DEGREES_OUTPUT = "degrees.csv"
+DEPARTMENTS_OUTPUT = "departments.csv"
+
+AWLEVEL_TO_DEGREE_TYPE = {
+    3: "Associate",
+    5: "Bachelor",
+    7: "Master",
+    17: "PhD",
+    18: "Professional Doctorate",
+    19: "Doctorate - Other",
+}
+
+CIPCODE_VARNAME = "CIPCODE"
+CIP_FREQUENCIES_SHEET = "Frequencies"
+FIRST_MAJOR_CODE = 1
+GRAND_TOTAL_CIP_CODE = 99.0

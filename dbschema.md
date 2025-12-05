@@ -99,18 +99,25 @@ INDEX: (college_id, academic_year, acceptance_rate, acceptance_rate_female, acce
 PRIMARY KEY: (college_id, year_reported, ranking_system)
 INDEX: (college_id, year_reported, education_quality_rank)
 
-## `degrees_offered`
+## `departments`
+
+- `department_id` (VARCHAR(20) PRIMARY KEY) -- CIP code for USA, other coding systems for other countries
+- `department_name` (VARCHAR(255) NOT NULL)
+
+INDEX: (department_name)
+
+## `degrees`
 
 - `college_id` (INT NOT NULL, FOREIGN KEY REFERENCES college_metadata(college_id))
+- `academic_year` (INT NOT NULL)
+- `department_id` (VARCHAR(20) NOT NULL, FOREIGN KEY REFERENCES departments(department_id))
 - `degree_type` (VARCHAR(50) NOT NULL) -- BS/BA/MS/MA/PhD/MD/JD
-- `department` (VARCHAR(255) NOT NULL)
-- `duration_years` (DECIMAL(3,1))
-- `department_us_news_rank` (INT)
-- `created_at` (TIMESTAMP DEFAULT CURRENT_TIMESTAMP)
-- `updated_at` (TIMESTAMP DEFAULT CURRENT_TIMESTAMP)
+- `total_graduates` (INT)
+- `total_female_graduates` (INT)
+- `total_international_graduates` (INT)
 
-PRIMARY KEY: (college_id, degree_type, department)
-INDEX: (college_id, duration_years, degree_type)
+PRIMARY KEY: (college_id, academic_year, department_id, degree_type)
+INDEX: (college_id, department_id, total_graduates)
 
 ## `scholarships`
 
