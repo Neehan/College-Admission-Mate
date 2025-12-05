@@ -4,20 +4,20 @@
 
 ## `college_metadata`
 
-- `college_id` (PRIMARY KEY, SERIAL)
+- `college_id` (PRIMARY KEY, INT) -- IPEDS UNITID
 - `name` (VARCHAR(255) NOT NULL)
 - `website` (VARCHAR(500))
+- `admissions_website` (VARCHAR(500))
 - `financial_aid_website` (VARCHAR(500))
 - `application_website` (VARCHAR(500))
 - `country` (VARCHAR(100) NOT NULL)
 - `state` (VARCHAR(100))
 - `city` (VARCHAR(100))
-- `known_for` (TEXT)
 - `is_liberal_arts_college` (BOOLEAN DEFAULT FALSE)
-- `housing_guaranteed_years` (INT)
 - `has_research_opportunities` (BOOLEAN DEFAULT FALSE)
-- `study_abroad_programs_count` (INT)
 - `setting_type` (VARCHAR(20)) -- urban/suburban/rural
+- `is_public` (BOOLEAN)
+- `calendar_system` (VARCHAR(20)) -- semester/quarter/trimester
 - `created_at` (TIMESTAMP DEFAULT CURRENT_TIMESTAMP)
 - `updated_at` (TIMESTAMP DEFAULT CURRENT_TIMESTAMP)
 
