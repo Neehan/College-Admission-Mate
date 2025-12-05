@@ -103,6 +103,7 @@ INDEX: (college_id, year_reported, education_quality_rank)
 
 - `department_id` (VARCHAR(20) PRIMARY KEY) -- CIP code for USA, other coding systems for other countries
 - `department_name` (VARCHAR(255) NOT NULL)
+- `country` (VARCHAR(50) NOT NULL)
 
 INDEX: (department_name)
 
