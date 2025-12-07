@@ -26,9 +26,8 @@ LEVEL_GRADUATE = 1
 IPEDS_COLUMNS_IC = ["UNITID", "CALSYS", "LEVEL5", "LEVEL6", "LEVEL7", "LEVEL8"]
 IPEDS_MERGE_KEY = "UNITID"
 
-DATA_DIR_USA = "data/USA"
-UNZIPPED_DIR_CANDIDATES = ["unzipped", "unzipped_new"]
-PROCESSED_DIR = "processed"
+DATA_DIR_USA = "data/USA/IPEDS"
+PROCESSED_DIR = "data/USA/processed"
 
 COLLEGE_METADATA_OUTPUT = "college_metadata.csv"
 
@@ -49,6 +48,8 @@ ENROLLMENT_OUTPUT = "enrollment.csv"
 ACCEPTANCE_OUTPUT = "acceptance.csv"
 FINANCIAL_AID_OUTPUT = "financial_aid.csv"
 TESTS_SCORES_OUTPUT = "tests_and_scores.csv"
+APPLICATION_REQUIREMENTS_OUTPUT = "application_requirements.csv"
+COLLEGE_REQUIREMENTS_MAP_OUTPUT = "college_application_requirements_map.csv"
 
 AWLEVEL_TO_DEGREE_TYPE = {
     3: "Associate",
@@ -156,3 +157,41 @@ FINANCIAL_AID_BUCKETS = [
     ("NPIS440", 75001, 110000),
     ("NPIS450", 110001, None),
 ]
+
+ADM_REQUIREMENTS = {
+    "ADMCON1": ("gpa", "Secondary school GPA"),
+    "ADMCON2": ("class_rank", "Secondary school rank"),
+    "ADMCON3": ("transcript", "Secondary school record/transcript"),
+    "ADMCON4": ("college_prep_program", "Completion of college-preparatory program"),
+    "ADMCON5": ("recommendations", "Recommendations"),
+    "ADMCON6": ("competencies", "Formal demonstration of competencies"),
+    "ADMCON7": ("admission_tests", "Admission test scores"),
+    "ADMCON8": ("english_proficiency", "English proficiency test"),
+    "ADMCON9": ("other_test", "Other test (Wonderlic, etc.)"),
+    "ADMCON10": ("work_experience", "Work experience"),
+    "ADMCON11": ("essay", "Personal statement or essay"),
+    "ADMCON12": ("legacy_status", "Legacy status"),
+}
+
+# Numeric transformations
+CIP_MULTIPLIER = 100
+PERCENTAGE_MULTIPLIER = 100
+PERCENTAGE_DECIMALS = 2
+MAX_PERCENTAGE = 100
+MIN_GRADUATES = 0
+MIN_COHORT_SIZE = 0
+MIN_DENOMINATOR = 0
+
+# IPEDS requirement codes
+REQUIRED_CODE = 1
+RECOMMENDED_CODE = 2
+NOT_REQUIRED_CODE = 3
+NOT_USED_CODE = 4
+CONSIDERED_CODE = 5
+
+# Common IPEDS columns
+UNITID_COLUMN = "UNITID"
+
+# File naming
+REVISED_SUFFIX = "_rv"
+CSV_EXTENSION = ".csv"

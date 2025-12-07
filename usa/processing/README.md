@@ -16,7 +16,7 @@ For each year you want to process (e.g., 2024, 2023, extendable to 2022):
 - **SFA{yy}{yy+1}.csv** — net price (optional; enriches enrollment total_cost; e.g., **SFA2223.csv** for 2023 cycle)
 - **GR{year}.csv** — graduation outcomes (optional; enriches enrollment graduation_rate_4yr/6yr)
 
-File names per year are configured in `processing/usa/constants.py::YEAR_FILE_CONFIGS`; adjust there when adding another year or if filenames differ. The pipeline looks for `data/USA/{year}/unzipped` (prefers revised `*_rv.csv` when available) and falls back to `unzipped_new`.
+File names per year are configured in `processing/usa/constants.py::YEAR_FILE_CONFIGS`; adjust there when adding another year or if filenames differ. The pipeline looks for `data/USA/{year}/unzipped` (prefers revised `*_rv.csv` when available).
 
 ### Relevant columns by table
 
